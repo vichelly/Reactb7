@@ -1,0 +1,15 @@
+REACT CRA (projeto criado com CRA)
+
+npx create-react-app react-primeiro --template typescript
+
+npm start
+
+
+
+REACT + VITE (projeto criado com VITE)
+
+npm init vite react-vite -- --template react-ts
+
+npm install
+
+npm run dev
