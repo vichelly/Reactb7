@@ -1,5 +1,5 @@
 type props = {
-    title: string;
+    title?: string;
 }
 
 export const Header = ({title}: props)=> {
