@@ -14,3 +14,8 @@ npm init vite react-vite -- --template react-ts
 npm install
 
 npm run dev
+
+
+Usar vários componentes
+
+criar os componentes em arquivos diferentes
