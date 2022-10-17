@@ -6,6 +6,7 @@ npm start
 
 
 
+
 REACT + VITE (projeto criado com VITE)
 
 npm init vite react-vite -- --template react-ts
