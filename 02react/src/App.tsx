@@ -2,12 +2,16 @@ import React,{useState} from 'react';
 
 const App = () => {
 
-  const [name, setName] = useState('Vitor Lucas');
+  // uso de states
+
+ /*  const [name, setName] = useState('Vitor Lucas');
 
   const buttonclick = () => {
     setName('Vichelly');
   };
+ */
 
+  //criando o contador usando state
   const [n,setN] = useState(0);
 
   const handleminus = () => {
@@ -17,6 +21,8 @@ const App = () => {
     setN(n+1);
   }
 
+  
+  // criando o input que atualiza
   const[nome, setNome] = useState('');
 
   const handleinput = (event: React.ChangeEvent<HTMLInputElement> ) => {
@@ -25,16 +31,21 @@ const App = () => {
 
   return(
     <div>
-      Nome: <input type="text" value={nome} onChange={handleinput} />
-      <h2>seu nome é {nome}</h2>
       <hr />
-      <h1>Contador</h1>
+      <h2>Contador</h2>
       <button onClick={handleminus} >-</button>
-      <h2>{n}</h2>
+      <h1>{n}</h1>
       <button onClick={handleplus} >+</button>
       <hr />
-      o número é {name}
-      <button onClick={buttonclick} > Click Here </button>
+      <br /><br />
+      <hr />
+      <h2>atualiza em tempo real</h2>
+      <h2>Digite seu nome</h2> <input type="text" value={nome} onChange={handleinput} />
+      <h2>seu nome é {nome}</h2>
+      <hr />
+      <br /><br />
+     {/*  o número é {name}
+      <button onClick={buttonclick} > Click Here </button> */}
     </div>
   );
 }
