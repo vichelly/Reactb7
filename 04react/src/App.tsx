@@ -1,70 +1,23 @@
-//importa o componente de components
-import {Botao} from './components/buton';
-import {Pessoa} from './components/Pessoa';
-// reenderizando conteúdo condicional
-import { useState } from 'react';
+import * as S from './AppStyles'
+import { useState } from 'react'
 
 
 function App() {
 
-  const botaoEvent = (txt:string) => {
-    alert("Frase do app: "+txt);
-  }
+  const [number, setNumber] = useState(40);
 
-  let list =[
-    'Maneiro','Legal','Bacana','Show','Massa'
-  ];
-  //função map: executa algo em cada item do array
-
-  let pessoa = [
-    {name: 'Genilson', age: 45 },
-    {name: 'Rosvald', age: 32 },
-    {name: 'Gerald', age: 56 },
-    {name: 'Gislene', age: 34}
-  ]
-
-  /* constante da condicional */
-  const [show, setShow] = useState(false);
-  /* fução para mostrar o condicional com toggle */
-  const handleClick = () => {
-    /* if(show){
-      setShow(false);
-    }
-    else{
-      setShow(true);
-    }    
-    
-    é possível fazer o mesmo de uma maneira mais facil
-    com apenas uma linha!
-    */
-
-    setShow(!show);
-
+  function handleClick() {
+    setNumber(number + 3)
   }
 
   return (
-    <div>
-      <Botao text="clique aqui" clickfn={botaoEvent} ></Botao><br />
-      <h2>Lista de adjetivos</h2>
-      <ul>
-        {list.map((item, index )=>(
-          //colocar o key para ordenar, index = cada um tem um
-          <li key={index} >{item}</li>
-        ))}
-        <br />
-        {pessoa.map((item, index)=>(
-          <Pessoa data={item}/>
-        ) )}
-        <br />
-        <br />
-
-
-        {/* reenderizar conteúdo condicional */}
-        <button onClick={handleClick} >{show ? 'Ocultar' : 'Mostrar'}</button>
-
-        {show === true && <div>Jacksons Five</div>}
-      </ul>
-    </div>
+    <>
+      <S.Container>
+        Texto do componente
+        <S.Botao bg="#FF0000" onClick={handleClick} >green button height = {number}px </S.Botao>
+        <S.Botao bg="#00FF00" small={true} height={number+'px'} > green </S.Botao>
+      </S.Container>
+    </>
   )
 }
 
